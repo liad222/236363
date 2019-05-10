@@ -41,6 +41,9 @@ public class SimpleTest extends AbstractTest{
 
     @Test
     public void testDeleteUser(){
+        clearTables();
+        dropTables();
+        createTables();
         User u = new User();
         u.setId(10);
         u.setName("Eli");

@@ -13,7 +13,7 @@ public class BasicAPITests extends AbstractTest {
 
         ReturnValue res;
         Mimouna m = new Mimouna();
-        m.setId(1);
+        m.setId(12);
         m.setUserName("Yonatan");
         m.setCity("Tel Aviv");
         m.setFamilyName("Cohen");
@@ -21,10 +21,10 @@ public class BasicAPITests extends AbstractTest {
         res = Solution.addMimouna(m);
         assertEquals(OK, res);
 
-        res = Solution.attendMimouna(1, 5);
+        res = Solution.attendMimouna(12, 5);
         assertEquals(OK, res);
 
-        res = Solution.attendMimouna(1, -19);
+        res = Solution.attendMimouna(12, -19);
         assertEquals(BAD_PARAMS, res);
     }
 

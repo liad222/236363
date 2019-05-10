@@ -18,6 +18,7 @@ public class Example {
         Solution.clearTables();
         Solution.dropTables();
         Solution.createTables();
+        /*
         User livni = new User();
         livni.setId(1);
         livni.setName("liad");
@@ -83,7 +84,7 @@ public class Example {
         System.out.println(Solution.getMimounalist(1003));
         Solution.deleteMimounalist(l1);
         System.out.println(Solution.deleteMimounalist(l1));
-        System.out.println("END OF MIMOUNALIST--------------------");
+        System.out.println("END OF MIMOUNALIST--------------------");*/
     }
 
     private static void deleteFromTable() {

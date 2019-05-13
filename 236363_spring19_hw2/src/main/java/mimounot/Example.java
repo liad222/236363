@@ -17,7 +17,7 @@ public class Example {
 
         Solution.clearTables();
         Solution.dropTables();
-        Solution.createTables();
+        //Solution.createTables();
         /*
         User livni = new User();
         livni.setId(1);

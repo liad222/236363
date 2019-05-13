@@ -1,35 +1,39 @@
 
 package mimounot;
 
+import mimounot.business.Mimouna;
+import mimounot.business.MimounaList;
+import mimounot.business.ReturnValue;
+import mimounot.business.User;
 import org.junit.Test;
-import mimounot.business.*;
-import static org.junit.Assert.assertEquals;
+
 import static mimounot.business.ReturnValue.*;
+import static org.junit.Assert.assertEquals;
 
 
 public class BasicAPITests extends AbstractTest {
     @Test
-    public void Test1() {
+    public void songPlayTest() {
 
         ReturnValue res;
         Mimouna m = new Mimouna();
-        m.setId(12);
+        m.setId(1);
         m.setUserName("Yonatan");
         m.setCity("Tel Aviv");
-        m.setFamilyName("Cohen");
+        m.setFamilyname("Cohen");
 
         res = Solution.addMimouna(m);
         assertEquals(OK, res);
 
-        res = Solution.attendMimouna(12, 5);
+        res = Solution.attendMimouna(1, 5);
         assertEquals(OK, res);
 
-        res = Solution.attendMimouna(12, -19);
+        res = Solution.attendMimouna(1, -19);
         assertEquals(BAD_PARAMS, res);
     }
 
     @Test
-    public void Test2() {
+    public void followPlaylistTest() {
 
         ReturnValue res;
         MimounaList p = new MimounaList();
@@ -70,7 +74,7 @@ public class BasicAPITests extends AbstractTest {
         assertEquals(OK , res);
     }
     @Test
-    public void Test3() {
+    public void attendMimouna() {
         
         User u1 = new User();
         u1.setId(100);
@@ -82,7 +86,7 @@ public class BasicAPITests extends AbstractTest {
         m.setId(1);
         m.setUserName("Yonatan");
         m.setCity("Tel Aviv");
-        m.setFamilyName("Cohen");
+        m.setFamilyname("Cohen");
 
         ReturnValue res = Solution.addMimouna(m);
         assertEquals(OK , res);

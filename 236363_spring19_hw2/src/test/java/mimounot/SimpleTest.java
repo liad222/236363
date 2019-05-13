@@ -1,31 +1,15 @@
 package mimounot;
 
+
+import mimounot.business.ReturnValue;
+import mimounot.business.User;
 import org.junit.Test;
-import mimounot.business.*;
-import static org.junit.Assert.assertEquals;
 import static mimounot.business.ReturnValue.*;
+import static org.junit.Assert.assertEquals;
+
 
 
 public class SimpleTest extends AbstractTest{
-
-
-    @Test
-    public void testCreateTables()
-    {
-    createTables();
-    }
-
-    @Test
-    public void testDropTables()
-    {
-        dropTables();
-    }
-    @Test
-    public void testClearTables()
-    {
-        clearTables();
-    }
-
 
     @Test
     public void simpleTestCreateUser()
@@ -41,9 +25,6 @@ public class SimpleTest extends AbstractTest{
 
     @Test
     public void testDeleteUser(){
-        clearTables();
-        dropTables();
-        createTables();
         User u = new User();
         u.setId(10);
         u.setName("Eli");

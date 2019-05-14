@@ -17,7 +17,7 @@ public class Mimouna {
 
 
 
-    public void setFamilyname(String familyname) {
+    public void setFamilyName(String familyname) {
         this.familyname = familyname;
     }
 

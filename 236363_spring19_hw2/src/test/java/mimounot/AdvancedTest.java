@@ -62,7 +62,7 @@ public class AdvancedTest extends AbstractTest {
         Mimouna m1 = new Mimouna();
         m1.setId(1);
         m1.setUserName("Raymond");
-        m1.setFamilyname("Barone");
+        m1.setFamilyName("Barone");
         m1.setCity("NY");
 
         Solution.addMimouna(m1);
@@ -70,7 +70,7 @@ public class AdvancedTest extends AbstractTest {
         Mimouna m2 = new Mimouna();
         m2.setId(2);
         m2.setUserName("Robert");
-        m2.setFamilyname("Barone");
+        m2.setFamilyName("Barone");
         m2.setCity("NY");
 
         Solution.addMimouna(m2);
@@ -78,7 +78,7 @@ public class AdvancedTest extends AbstractTest {
         Mimouna m3 = new Mimouna();
         m3.setId(3);
         m3.setUserName("Hank");
-        m3.setFamilyname("MacDougall");
+        m3.setFamilyName("MacDougall");
         m3.setCity("NY");
 
         Solution.addMimouna(m3);
@@ -86,7 +86,7 @@ public class AdvancedTest extends AbstractTest {
         Mimouna m4 = new Mimouna();
         m4.setId(4);
         m4.setUserName("Lois");
-        m4.setFamilyname("Whelan");
+        m4.setFamilyName("Whelan");
         m4.setCity("NY");
 
         Solution.addMimouna(m4);
@@ -94,7 +94,7 @@ public class AdvancedTest extends AbstractTest {
         Mimouna m5 = new Mimouna();
         m5.setId(5);
         m5.setUserName("Bernie");
-        m5.setFamilyname("Gruenfelder");
+        m5.setFamilyName("Gruenfelder");
         m5.setCity("NY");
 
         Solution.addMimouna(m5);
@@ -269,7 +269,7 @@ public class AdvancedTest extends AbstractTest {
             m.setId(i*1000 + 1000);
             m.setCity("NY");
             m.setUserName("SomeName");
-            m.setFamilyname("SomeFName");
+            m.setFamilyName("SomeFName");
 
             res = Solution.addMimouna(m);
             assertEquals(OK, res);
@@ -573,7 +573,7 @@ public class AdvancedTest extends AbstractTest {
         Mimouna m6 = new Mimouna();
         m6.setId(6);
         m6.setUserName("Bernie");
-        m6.setFamilyname("Gruenfelder");
+        m6.setFamilyName("Gruenfelder");
         m6.setCity("NOT NY");
 
         Solution.addMimouna(m6);
@@ -691,7 +691,7 @@ public class AdvancedTest extends AbstractTest {
             m.setId(i);
             m.setCity("NY");
             m.setUserName("Some name");
-            m.setFamilyname("Some family");
+            m.setFamilyName("Some family");
 
             res = Solution.addMimouna(m);
             assertEquals(OK, res);

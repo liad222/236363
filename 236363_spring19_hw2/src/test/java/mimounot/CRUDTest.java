@@ -164,7 +164,7 @@ public class CRUDTest extends AbstractTest {
         Mimouna m = new Mimouna();
         m.setId(236363);
         m.setUserName("Benny");
-        m.setFamilyname("Kimelfeld");
+        m.setFamilyName("Kimelfeld");
         m.setCity("Haifa");
         m.setGuestCount(500);
         m.setPoliticianComing(true);
@@ -182,7 +182,7 @@ public class CRUDTest extends AbstractTest {
         assertEquals(OK, res);
 
         m.setUserName("Not Benny");
-        m.setFamilyname("Not Kimelfeld");
+        m.setFamilyName("Not Kimelfeld");
         m.setCity("Not Haifa");
         m.setGuestCount(499);
         m.setPoliticianComing(false);
@@ -192,7 +192,7 @@ public class CRUDTest extends AbstractTest {
 
         m.setId(234123);
         m.setUserName("Benny");
-        m.setFamilyname("Kimelfeld");
+        m.setFamilyName("Kimelfeld");
         m.setCity("Haifa");
         m.setGuestCount(500);
         m.setPoliticianComing(true);
@@ -217,12 +217,12 @@ public class CRUDTest extends AbstractTest {
         assertEquals(BAD_PARAMS, res);
 
         m.setUserName("Yossi");
-        m.setFamilyname(null);
+        m.setFamilyName(null);
 
         res = Solution.addMimouna(m);
         assertEquals(BAD_PARAMS, res);
 
-        m.setFamilyname("Gil");
+        m.setFamilyName("Gil");
         m.setCity(null);
 
         res = Solution.addMimouna(m); // City can't be null according to recent update
@@ -246,7 +246,7 @@ public class CRUDTest extends AbstractTest {
         Mimouna m = new Mimouna();
         m.setId(236363);
         m.setUserName("Benny");
-        m.setFamilyname("Kimelfeld");
+        m.setFamilyName("Kimelfeld");
         m.setCity("Haifa");
         m.setGuestCount(500);
         m.setPoliticianComing(true);
@@ -272,7 +272,7 @@ public class CRUDTest extends AbstractTest {
         Mimouna m = new Mimouna();
         m.setId(236363);
         m.setUserName("Benny");
-        m.setFamilyname("Kimelfeld");
+        m.setFamilyName("Kimelfeld");
         m.setCity("Haifa");
         m.setGuestCount(500);
         m.setPoliticianComing(true);
@@ -377,7 +377,7 @@ public class CRUDTest extends AbstractTest {
         Mimouna m = new Mimouna();
         m.setId(236363);
         m.setUserName("Benny");
-        m.setFamilyname("Kimelfeld");
+        m.setFamilyName("Kimelfeld");
         m.setCity("Haifa");
         m.setGuestCount(500);
         m.setPoliticianComing(true);
@@ -407,7 +407,7 @@ public class CRUDTest extends AbstractTest {
         Mimouna m = new Mimouna();
         m.setId(236363);
         m.setUserName("Benny");
-        m.setFamilyname("Kimelfeld");
+        m.setFamilyName("Kimelfeld");
         m.setCity("Haifa");
         m.setGuestCount(500);
         m.setPoliticianComing(true);
@@ -458,7 +458,7 @@ public class CRUDTest extends AbstractTest {
         Mimouna m = new Mimouna();
         m.setId(236363);
         m.setUserName("Benny");
-        m.setFamilyname("Kimelfeld");
+        m.setFamilyName("Kimelfeld");
         m.setCity("Haifa");
         m.setGuestCount(500);
         m.setPoliticianComing(true);

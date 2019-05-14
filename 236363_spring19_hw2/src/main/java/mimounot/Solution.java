@@ -508,7 +508,7 @@ public class Solution {
             results.next();
             Uresult.setId(results.getInt("mimouna_id"));
             Uresult.setUserName(results.getString("user_name"));
-            Uresult.setFamilyname(results.getString("family_name"));
+            Uresult.setFamilyName(results.getString("family_name"));
             Uresult.setCity(results.getString("city"));
             Uresult.setGuestCount(results.getInt("guests_counter"));
             Uresult.setPoliticianComing(results.getBoolean("is_politician_coming"));

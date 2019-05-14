@@ -33,7 +33,7 @@ public class BasicTest extends AbstractTest{
         Mimouna m1 = new Mimouna();
         m1.setId(236319);
         m1.setUserName("Yossi");
-        m1.setFamilyname("Gil");
+        m1.setFamilyName("Gil");
         m1.setCity("Jerusalem");
 
         Solution.addMimouna(m1);
@@ -41,7 +41,7 @@ public class BasicTest extends AbstractTest{
         Mimouna m2 = new Mimouna();
         m2.setId(234218);
         m2.setUserName("Tamer");
-        m2.setFamilyname("Salman");
+        m2.setFamilyName("Salman");
         m2.setCity("Naharia");
 
         Solution.addMimouna(m2);
@@ -49,7 +49,7 @@ public class BasicTest extends AbstractTest{
         Mimouna m3 = new Mimouna();
         m3.setId(236363);
         m3.setUserName("Benny");
-        m3.setFamilyname("Kimelfeld");
+        m3.setFamilyName("Kimelfeld");
         m3.setCity("Naharia");
 
         Solution.addMimouna(m3);
@@ -57,7 +57,7 @@ public class BasicTest extends AbstractTest{
         Mimouna m4 = new Mimouna();
         m4.setId(9999999);
         m4.setUserName("Benny");
-        m4.setFamilyname("Kimelfeld2");
+        m4.setFamilyName("Kimelfeld2");
         m4.setCity("Naharia");
 
         Solution.addMimouna(m4);
@@ -65,7 +65,7 @@ public class BasicTest extends AbstractTest{
         Mimouna m5 = new Mimouna();
         m5.setId(88888);
         m5.setUserName("Benny");
-        m5.setFamilyname("Kimelfeld");
+        m5.setFamilyName("Kimelfeld");
         m5.setCity("Naharia");
 
         Solution.addMimouna(m5);
@@ -277,7 +277,7 @@ public class BasicTest extends AbstractTest{
         Mimouna m = new Mimouna(); // mimouna without city can't be added to list
         m.setId(676);
         m.setUserName("SomeName");
-        m.setFamilyname("SomeFName");
+        m.setFamilyName("SomeFName");
 
         res = Solution.addMimouna(m);
         assertEquals(BAD_PARAMS, res);

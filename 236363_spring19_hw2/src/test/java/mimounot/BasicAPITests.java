@@ -20,7 +20,7 @@ public class BasicAPITests extends AbstractTest {
         m.setId(1);
         m.setUserName("Yonatan");
         m.setCity("Tel Aviv");
-        m.setFamilyname("Cohen");
+        m.setFamilyName("Cohen");
 
         res = Solution.addMimouna(m);
         assertEquals(OK, res);
@@ -86,7 +86,7 @@ public class BasicAPITests extends AbstractTest {
         m.setId(1);
         m.setUserName("Yonatan");
         m.setCity("Tel Aviv");
-        m.setFamilyname("Cohen");
+        m.setFamilyName("Cohen");
 
         ReturnValue res = Solution.addMimouna(m);
         assertEquals(OK , res);

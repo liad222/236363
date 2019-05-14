@@ -1155,7 +1155,6 @@ public class Solution {
 
 
         } catch (SQLException e) {
-            System.out.println(e);
             return null;
             //e.printStackTrace()();
         }
@@ -1333,18 +1332,32 @@ public class Solution {
 
     public static ArrayList<Integer> getCloseUsers(Integer userId){
         Connection connection = DBConnector.getConnection();
-        PreparedStatement pstmt2;
+        PreparedStatement pstmt2,pstmt3;
         pstmt2 = null;
+        pstmt3 = null;
         ResultSet results = null;
         ArrayList<Integer> IDs = new ArrayList<>();
         try {
-
+            pstmt3 = connection.prepareStatement(
+                            "SELECT COUNT(list_id) FROM Following WHERE user_id = ?");
+            pstmt3.setInt(1, userId);
+            results = pstmt3.executeQuery();
+            if(results.isBeforeFirst() == false) {
+                IDs = new ArrayList<>();
+                return IDs;
+            }
+            results.next();
+            if(results.getInt(1) == 0){
+                IDs = new ArrayList<>();
+                return IDs;
+            }
 
             pstmt2 = connection.prepareStatement(
                     "SELECT user_id AS target FROM Users " +
-                            "GROUP BY target " +
-                            "HAVING((SELECT COUNT(l_id1) FROM (SELECT * FROM SameLists WHERE u_id2 = ? AND u_id1 = target))*100 / " +
-                            "(SELECT COUNT(list_id) FROM Following WHERE user_id = ?) > 66) " +
+                            "GROUP BY user_id " +
+                            "HAVING((SELECT COUNT(l_id1) FROM (SELECT * FROM SameLists WHERE u_id2 = ? AND u_id1 = user_id) AS numofsame)*100 / " +
+                            "(SELECT COUNT(list_id) FROM Following WHERE user_id = ?) >= 67) " +
+                            "ORDER BY user_id " +
                             "LIMIT 10");
             pstmt2.setInt(1, userId);
             pstmt2.setInt(2, userId);
@@ -1370,6 +1383,7 @@ public class Solution {
         finally {
             try {
                 if(pstmt2 != null) pstmt2.close();
+                if(pstmt3 != null) pstmt3.close();
                 if(results != null){
                     results.close();
                 }
@@ -1386,7 +1400,7 @@ public class Solution {
 
     public static ArrayList<Integer> getMimounaListRecommendation (Integer userId){
         Connection connection = DBConnector.getConnection();
-        PreparedStatement pstmt2,pstmt3,pstmt4,pstmt5,pstmt6,pstmt7,pstmt8;
+        PreparedStatement pstmt2,pstmt3,pstmt4,pstmt5,pstmt6,pstmt7,pstmt8,pstmt9,pstmt10,pstmt11,pstmt12;
         pstmt2 = null;
         pstmt3 = null;
         pstmt4 = null;
@@ -1394,20 +1408,54 @@ public class Solution {
         pstmt6 = null;
         pstmt7 = null;
         pstmt8 = null;
+        pstmt9 = null;
+        pstmt10 = null;
+        pstmt11 = null;
+        pstmt12 = null;
         ResultSet results = null;
         ArrayList<Integer> IDs = new ArrayList<>();
         try {
+
+            pstmt9 = connection.prepareStatement(
+                    "SELECT COUNT(list_id) FROM Following WHERE user_id = ?");
+            pstmt9.setInt(1, userId);
+            results = pstmt9.executeQuery();
+            if(results.isBeforeFirst() == false) {
+                IDs = new ArrayList<>();
+                return IDs;
+            }
+            results.next();
+            if(results.getInt(1) == 0){
+                IDs = new ArrayList<>();
+                return IDs;
+            }
+
+            pstmt10 = connection.prepareStatement(
+                    "SELECT COUNT(*) AS RowCnt\n" +
+                            "FROM (SELECT user_id AS target FROM Users " +
+                            "GROUP BY user_id " +
+                            "HAVING((SELECT COUNT(l_id1) FROM (SELECT * FROM SameLists WHERE u_id2 = '" + userId + "' AND u_id1 = user_id) AS numofsame)*100 / " +
+                            "(SELECT COUNT(list_id) FROM Following WHERE user_id = '" + userId + "') > 66)) " +
+                            "AS test");
+            results = pstmt10.executeQuery();
+            if(results.isBeforeFirst() == false) {
+                IDs = new ArrayList<>();
+                return IDs;
+            }
+            results.next();
+            if(results.getInt(1) == 0){
+                IDs = new ArrayList<>();
+                return IDs;
+            }
 
 
 
             pstmt2 = connection.prepareStatement(
                     "CREATE VIEW FindClose AS " +
                             "SELECT user_id AS target FROM Users " +
-                            "GROUP BY target " +
-                            "HAVING((SELECT COUNT(l_id1) FROM (SELECT * FROM SameLists WHERE u_id2 = ? AND u_id1 = target))*100 / " +
-                            "(SELECT COUNT(list_id) FROM Following WHERE user_id = ?) > 66)");
-            pstmt2.setInt(1, userId);
-            pstmt2.setInt(2, userId);
+                            "GROUP BY user_id " +
+                            "HAVING((SELECT COUNT(l_id1) FROM (SELECT * FROM SameLists WHERE u_id2 = '" + userId + "' AND u_id1 = user_id) AS numofsame)*100 / " +
+                            "(SELECT COUNT(list_id) FROM Following WHERE user_id = '" + userId + "') >= 67)");
             pstmt2.execute();
 
 
@@ -1422,15 +1470,23 @@ public class Solution {
                     "CREATE VIEW PotentialList AS " +
                             "SELECT l_id AS list_id " +
                             "FROM FindCloseList " +
-                            "WHERE list_id NOT IN(SELECT list_id FROM Following WHERE user_id = ?) " +
+                            "WHERE l_id NOT IN(SELECT list_id FROM Following WHERE user_id = '" + userId + "') " +
                             "ORDER BY l_id");
-            pstmt4.setInt(1, userId);
             pstmt4.execute();
 
+
+            pstmt11 = connection.prepareStatement(
+                    "CREATE VIEW FollowersFromClose AS " +
+                            "SELECT list_id, COUNT(user_id) AS fTotal " +
+                            "FROM Following " +
+                            "WHERE user_id IN(SELECT * FROM FindClose)" +
+                            "GROUP BY list_id");
+            pstmt11.execute();
+
             pstmt5 = connection.prepareStatement(
-                    "SELECT list_id FROM TotalFollowers " +
+                    "SELECT list_id FROM FollowersFromClose " +
                             "WHERE list_id IN(SELECT * FROM PotentialList) " +
-                            "ORDER BY fTotal DESC " +
+                            "ORDER BY fTotal DESC, list_id " +
                             "LIMIT 3 ");
             results = pstmt5.executeQuery();
             if(results.isBeforeFirst() == false) {
@@ -1453,11 +1509,15 @@ public class Solution {
         finally {
             try {
                 pstmt6 = connection.prepareStatement("DROP VIEW IF EXISTS FindClose\n");
-                pstmt7 = connection.prepareStatement("DROP VIEW IF EXISTS FindCloseLists\n");
+                pstmt7 = connection.prepareStatement("DROP VIEW IF EXISTS FindCloseList\n");
                 pstmt8 = connection.prepareStatement("DROP VIEW IF EXISTS PotentialList\n");
-                pstmt6.execute();
-                pstmt7.execute();
+                pstmt12 = connection.prepareStatement("DROP VIEW IF EXISTS FollowersFromClose\n");
+                pstmt12.execute();
                 pstmt8.execute();
+                pstmt7.execute();
+                pstmt6.execute();
+                if(pstmt9 != null) pstmt9.close();
+                if(pstmt10 != null) pstmt10.close();
                 if(pstmt6 != null) pstmt6.close();
                 if(pstmt7 != null) pstmt7.close();
                 if(pstmt8 != null) pstmt8.close();
@@ -1482,21 +1542,33 @@ public class Solution {
 
     public static ArrayList<Integer> getTopPoliticianMimounaList(Integer userId) {
         Connection connection = DBConnector.getConnection();
-        PreparedStatement pstmt2,pstmt3,pstmt4,pstmt6;
+        PreparedStatement pstmt2,pstmt3,pstmt4,pstmt6,pstmt5;
         pstmt2 = null;
         pstmt3 = null;
         pstmt4 = null;
         pstmt6 = null;
+        pstmt5 = null;
         ResultSet results = null;
         ArrayList<Integer> IDs = new ArrayList<>();
         try {
 
-
+            pstmt5 = connection.prepareStatement(
+                    "SELECT COUNT(*) AS RowCnt\n " +
+                            "FROM ListsWithPolitician ");
+            results = pstmt5.executeQuery();
+            if(results.isBeforeFirst() == false) {
+                IDs = new ArrayList<>();
+                return IDs;
+            }
+            results.next();
+            if(results.getInt(1) == 0){
+                IDs = new ArrayList<>();
+                return IDs;
+            }
 
             pstmt2 = connection.prepareStatement(
                             "SELECT city  FROM Users " +
-                            "WHERE user_id = ? AND politician = FALSE " +
-                            "(SELECT COUNT(list_id) FROM Following WHERE user_id = ?) > 66)");
+                            "WHERE user_id = ? AND politician = FALSE");
             pstmt2.setInt(1, userId);
             results = pstmt2.executeQuery();
             if(results.isBeforeFirst() == false) {
@@ -1504,20 +1576,21 @@ public class Solution {
                 return IDs;
             }
             //if we reached here, the required city is in results.----------
-
+            results.next();
+            String s = results.getString("city");
             pstmt3 = connection.prepareStatement(
                     "CREATE VIEW PotentialLists AS " +
-                            "SELECT list_id  " +
+                            "SELECT list_id " +
                             "FROM ListsWithPolitician " +
-                            "WHERE list_id IN (SELECT list_id FROM MimounaList WHERE city = ?)");
-            pstmt3.setInt(1, userId);
+                            "WHERE list_id IN(SELECT list_id FROM MimounaList WHERE city = '" + s + "')");
             pstmt3.execute();
+
 
 
             pstmt4 = connection.prepareStatement(
                     "SELECT list_id FROM TotalListGuests " +
-                            "WHERE list_id IN(PotentialLists) " +
-                            "ORDER BY fTotal DESC " +
+                            "WHERE list_id IN(SELECT * FROM PotentialLists) " +
+                            "ORDER BY total DESC, list_id " +
                             "LIMIT 10 ");
             results = pstmt4.executeQuery();
             if(results.isBeforeFirst() == false) {
@@ -1542,6 +1615,7 @@ public class Solution {
                 pstmt6 = connection.prepareStatement("DROP VIEW IF EXISTS PotentialLists\n");
                 pstmt6.execute();
                 if(pstmt6 != null) pstmt6.close();
+                if(pstmt5 != null) pstmt5.close();
                 if(pstmt2 != null) pstmt2.close();
                 if(pstmt3 != null) pstmt3.close();
                 if(pstmt4 != null) pstmt4.close();

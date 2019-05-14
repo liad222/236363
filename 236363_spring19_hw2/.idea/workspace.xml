@@ -36,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/mimounot/Solution.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="1081" column="9" selection-start-line="1081" selection-start-column="9" selection-end-line="1081" selection-end-column="9" />
+            <state relative-caret-position="116">
+              <caret line="1402" column="68" selection-start-line="1402" selection-start-column="68" selection-end-line="1402" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -48,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/mimounot/AdvancedTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="691" column="25" selection-start-line="691" selection-start-column="25" selection-end-line="691" selection-end-column="25" />
+            <state relative-caret-position="553">
+              <caret line="541" column="41" lean-forward="true" selection-start-line="541" selection-start-column="41" selection-end-line="541" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -65,15 +65,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getfamily</find>
-      <find>set</find>
-      <find>getusername</find>
-      <find>getuser</find>
       <find>is</find>
       <find>is_</find>
       <find>bad</find>
       <find>VIEW</find>
-      <find>TotalListGuests</find>
       <find>NUMOFMImounas</find>
       <find>ListRating</find>
       <find>SAmelists</find>
@@ -95,6 +90,11 @@
       <find>System</find>
       <find>close</find>
       <find>MimounasInLists</find>
+      <find>?</find>
+      <find>count(*</find>
+      <find>TotalListGuests</find>
+      <find>+ u</find>
+      <find>sy</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -115,10 +115,10 @@
         <option value="$PROJECT_DIR$/src/test/java/mimounot/SimpleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mimounot/Example.java" />
         <option value="$PROJECT_DIR$/src/main/java/mimounot/business/Mimouna.java" />
-        <option value="$PROJECT_DIR$/src/test/java/mimounot/AdvancedTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/mimounot/CRUDTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/mimounot/BasicAPITests.java" />
         <option value="$PROJECT_DIR$/src/test/java/mimounot/BasicTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/mimounot/AdvancedTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/mimounot/Solution.java" />
       </list>
     </option>
@@ -154,6 +154,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,6 +184,14 @@
               <item name="236363_spring_18_hw2" type="b2602c69:ProjectViewProjectNode" />
               <item name="236363_spring19_hw2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mimounot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="236363_spring_18_hw2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="236363_spring19_hw2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -204,7 +213,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -234,7 +242,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AdvancedTest">
+  <component name="RunManager" selected="JUnit.mimounot in 236363_winter_18-19_hw2">
     <configuration name="AdvancedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="236363_winter_18-19_hw2" />
       <extension name="coverage">
@@ -250,7 +258,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicAPITests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdvancedTest.testListLargerThan10_C" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="236363_winter_18-19_hw2" />
       <extension name="coverage">
         <pattern>
@@ -259,13 +267,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mimounot" />
-      <option name="MAIN_CLASS_NAME" value="mimounot.BasicAPITests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="mimounot.AdvancedTest" />
+      <option name="METHOD_NAME" value="testListLargerThan10_C" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdvancedTest.testListLargerThan3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="236363_winter_18-19_hw2" />
       <extension name="coverage">
         <pattern>
@@ -274,13 +283,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mimounot" />
-      <option name="MAIN_CLASS_NAME" value="mimounot.BasicTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="mimounot.AdvancedTest" />
+      <option name="METHOD_NAME" value="testListLargerThan3" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CRUDTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AdvancedTest.testListLargerThat10_B" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="236363_winter_18-19_hw2" />
       <extension name="coverage">
         <pattern>
@@ -289,13 +299,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mimounot" />
-      <option name="MAIN_CLASS_NAME" value="mimounot.CRUDTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="mimounot.AdvancedTest" />
+      <option name="METHOD_NAME" value="testListLargerThat10_B" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SimpleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="mimounot in 236363_winter_18-19_hw2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="236363_winter_18-19_hw2" />
       <extension name="coverage">
         <pattern>
@@ -304,26 +315,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mimounot" />
-      <option name="MAIN_CLASS_NAME" value="mimounot.SimpleTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BasicAPITests (1)" />
-      <item itemvalue="JUnit.SimpleTest" />
-      <item itemvalue="JUnit.BasicTest" />
-      <item itemvalue="JUnit.CRUDTest" />
       <item itemvalue="JUnit.AdvancedTest" />
+      <item itemvalue="JUnit.AdvancedTest.testListLargerThan10_C" />
+      <item itemvalue="JUnit.AdvancedTest.testListLargerThat10_B" />
+      <item itemvalue="JUnit.AdvancedTest.testListLargerThan3" />
+      <item itemvalue="JUnit.mimounot in 236363_winter_18-19_hw2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.mimounot in 236363_winter_18-19_hw2" />
         <item itemvalue="JUnit.AdvancedTest" />
-        <item itemvalue="JUnit.BasicAPITests (1)" />
-        <item itemvalue="JUnit.CRUDTest" />
-        <item itemvalue="JUnit.SimpleTest" />
-        <item itemvalue="JUnit.BasicTest" />
+        <item itemvalue="JUnit.AdvancedTest.testListLargerThan3" />
+        <item itemvalue="JUnit.AdvancedTest.testListLargerThat10_B" />
+        <item itemvalue="JUnit.AdvancedTest.testListLargerThan10_C" />
       </list>
     </recent_temporary>
   </component>
@@ -356,48 +366,52 @@
       <workItem from="1557673502677" duration="8563000" />
       <workItem from="1557729648998" duration="8780000" />
       <workItem from="1557760404437" duration="10108000" />
+      <workItem from="1557770657659" duration="4242000" />
+      <workItem from="1557775017881" duration="69000" />
+      <workItem from="1557775577275" duration="6584000" />
+      <workItem from="1557823481296" duration="4231000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BasicTest - 2019.05.13 at 20h 53m 27s.xml">
-      <configuration name="BasicTest" configurationId="JUnit" />
+    <history-entry file="AdvancedTest_testListLargerThan10_C - 2019.05.14 at 13h 12m 51s.xml">
+      <configuration name="AdvancedTest.testListLargerThan10_C" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BasicTest - 2019.05.13 at 20h 55m 15s.xml">
-      <configuration name="BasicTest" configurationId="JUnit" />
+    <history-entry file="AdvancedTest_testListLargerThan10_C - 2019.05.14 at 13h 13m 18s.xml">
+      <configuration name="AdvancedTest.testListLargerThan10_C" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BasicTest - 2019.05.13 at 20h 55m 57s.xml">
-      <configuration name="BasicTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BasicTest - 2019.05.13 at 20h 58m 31s.xml">
-      <configuration name="BasicTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BasicTest - 2019.05.13 at 21h 00m 27s.xml">
-      <configuration name="BasicTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BasicTest - 2019.05.13 at 21h 01m 14s.xml">
-      <configuration name="BasicTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SimpleTest - 2019.05.13 at 21h 01m 21s.xml">
-      <configuration name="SimpleTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="CRUDTest - 2019.05.13 at 21h 01m 28s.xml">
-      <configuration name="CRUDTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="BasicAPITests_(1) - 2019.05.13 at 21h 01m 34s.xml">
-      <configuration name="BasicAPITests (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AdvancedTest - 2019.05.13 at 21h 02m 11s.xml">
+    <history-entry file="AdvancedTest - 2019.05.14 at 13h 14m 39s.xml">
       <configuration name="AdvancedTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvancedTest_testListLargerThat10_B - 2019.05.14 at 13h 17m 45s.xml">
+      <configuration name="AdvancedTest.testListLargerThat10_B" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvancedTest_testListLargerThat10_B - 2019.05.14 at 13h 18m 38s.xml">
+      <configuration name="AdvancedTest.testListLargerThat10_B" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvancedTest_testListLargerThat10_B - 2019.05.14 at 13h 18m 54s.xml">
+      <configuration name="AdvancedTest.testListLargerThat10_B" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvancedTest - 2019.05.14 at 13h 20m 13s.xml">
+      <configuration name="AdvancedTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvancedTest_testListLargerThan3 - 2019.05.14 at 13h 21m 54s.xml">
+      <configuration name="AdvancedTest.testListLargerThan3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AdvancedTest - 2019.05.14 at 13h 31m 08s.xml">
+      <configuration name="AdvancedTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="mimounot_in_236363_winter_18-19_hw2 - 2019.05.14 at 13h 33m 32s.xml">
+      <configuration name="mimounot in 236363_winter_18-19_hw2" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102282000" />
+    <option name="totallyTimeSpent" value="117408000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27206478" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29149798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -441,6 +455,18 @@
           <line>641</line>
           <properties />
           <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mimounot/AdvancedTest.java</url>
+          <line>504</line>
+          <properties />
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/mimounot/AdvancedTest.java</url>
+          <line>495</line>
+          <properties />
+          <option name="timeStamp" value="123" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -661,15 +687,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/mimounot/AdvancedTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="691" column="25" selection-start-line="691" selection-start-column="25" selection-end-line="691" selection-end-column="25" />
+        <state relative-caret-position="553">
+          <caret line="541" column="41" lean-forward="true" selection-start-line="541" selection-start-column="41" selection-end-line="541" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/mimounot/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="1081" column="9" selection-start-line="1081" selection-start-column="9" selection-end-line="1081" selection-end-column="9" />
+        <state relative-caret-position="116">
+          <caret line="1402" column="68" selection-start-line="1402" selection-start-column="68" selection-end-line="1402" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
